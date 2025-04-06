@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="wakeword"
+            app:title="@string/wakeword"
+            app:defaultValue="Recallme"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+            android:inputType="textFilter"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:defaultValue="Everyone"
+            app:useSimpleSummaryProvider="true" />
+
+        <MultiSelectListPreference
+            android:dependency="reply"
+            android:key="specified"
+            android:title="Select Specified Contacts" />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreference
+            app:key="service"
+            app:title="@string/sync_title" />
+
+        <SwitchPreference
+            app:dependency="service"
+            app:key="silent"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+    <PreferenceCategory app:title="EXPERIMENTAL [NOT RECOMMENDED]">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="autoaccept"
+            android:dependency="service"
+            android:title="AutoAccept after 10 seconds"
+            app:summaryOff="ReCall will work normally when it is off"
+            app:summaryOn="If ReCaller number is not your trusted, DO NOT USE THIS SETTING!"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

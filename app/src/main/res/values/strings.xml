@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ReCall</string>
+    <!-- Settings Activity Title -->
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Configuration</string>
+    <string name="sync_header">ReCall Settings</string>
+
+    <!-- Messages Preferences -->
+    <string name="wakeword">WakeWord to call</string>
+    <string name="reply_title">Accept call requests from</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Start ReCall service</string>
+    <string name="attachment_title">Silent Calls</string>
+    <string name="attachment_summary_on">Default vibrate will be performed when call requested
+    </string>
+    <string name="attachment_summary_off">Default Ringtone will be played when call requested</string>
+</resources>
